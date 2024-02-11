@@ -1,0 +1,17 @@
+.smaller-button {
+    font-size: 8px; /* Adjust the font size as needed */
+    padding: 3px 7px;
+    height: 10px; 
+    width: 10px;/* Adjust padding to make the button smaller */
+    /* You can also use width and height to control the size of the button */
+  }
+  .card-body{
+    
+      /* Custom CSS to center the form */
+      
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+
+  }
