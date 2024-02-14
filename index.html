@@ -24,15 +24,29 @@
                     <option value="kg">Kg</option>
                     <option value="lbs">Lbs</option>
               </div>
-              <div class ="form-group">
+              <div class ="form-group ">
                 <label>Height :</label>
                 <input type = "number"  name ="" placeholder="Enter Height  " required id="height" class="form-control">
                 <select class="form-select" id="heightUnit">
                   <option value="m">Meters</option>
                   <option value="ft">Feet</option>
               </select>
+              <div class="form-group">
+                <label>Gender:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                  <label class="form-check-label" for="male">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                  <label class="form-check-label" for="female">
+                    Female
+                  </label>
+                  
+                </div>
               
-
             </div>
             <div class ="form-group">
               <label>BMI Value:</label>
@@ -53,6 +67,7 @@
       var weightUnit = document.getElementById('weightUnit').value;
       var heightUnit = document.getElementById('heightUnit').value;
        // Assuming meters as default unit
+      const gender = document.querySelector('input[name="gender"]:checked').value;
 
     // Check if weight unit is in pounds
     if (weightUnit == 'lbs') {
@@ -70,6 +85,23 @@
       var newbmivalue = weight /  (height * height);
       document.getElementById('bmivalue').value = newbmivalue;
     }
+    if (gender === 'male') {
+          if (bmi < 20) {
+              alert("Underweight for Male");
+          } else if (bmi >= 20 && bmi <= 25) {
+              alert("Healthy Weight for Male");
+          } else {
+              alert("Overweight for Male");
+          }
+      } else {
+          if (bmi < 19) {
+              alert("Underweight for Female");
+          } else if (bmi >= 19 && bmi <= 24) {
+              alert("Healthy Weight for Female");
+          } else {
+              alert("Overweight for Female");
+          }
+        }
   </script>
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
